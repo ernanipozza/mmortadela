@@ -1,13 +1,13 @@
 import React from "react";
 import { Navbar } from "../../navbar";
 
-export const Noticias = () => {
+export const Jogos = () => {
   return (
     <>
-      <Navbar />
-      <div>
-        <p>NOTICIAS</p>
-      </div>
+    <Navbar/>
+    <div>
+      <p>JOGOS</p>
+    </div>
     </>
   );
 };

@@ -1,7 +1,14 @@
-import React from 'react';
+// recebe parâmetro da rota com useParams
+
+import React from "react";
+import { useParams } from "react-router-dom";
 
 export const Game = () => {
-  return <div>
+  const { id } = useParams();
+  return (
+    <div>
       <p>GAME</p>
-      </div>;
+      <p>ID DO JOGO: {id}</p>
+    </div>
+  );
 };

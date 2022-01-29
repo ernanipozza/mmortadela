@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Card = () => {
+export const CardJogos = () => {
   return <div>
-      <p>CARD</p>
+      <p>CARDJOGOS</p>
       </div>;
 };
