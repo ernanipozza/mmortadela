@@ -1,8 +1,11 @@
 import React from "react";
-import { CardNoticia } from "./CardNoticias.style";
+import { CardNoticia, CardNoticiaImagem, CardNoticiaTitulo } from "./CardNoticias.style";
 
 export const CardNoticias = () => {
   return (
-    <CardNoticia></CardNoticia>
+    <CardNoticia>
+      <CardNoticiaImagem>IMAGEM NOTÍCIA</CardNoticiaImagem>
+      <CardNoticiaTitulo>TÍTULO NOTÍCIA</CardNoticiaTitulo>
+    </CardNoticia>
   );
 };

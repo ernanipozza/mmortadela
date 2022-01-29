@@ -2,10 +2,10 @@
 //consumir contexto de busca para filtrar
 
 import React from "react";
-import { CardNoticia } from "../cardNoticias/CardNoticias.style";
+import { CardNoticias } from "../cardNoticias/CardNoticias";
 
 export const MostruarioNoticias = () => {
   return (
-    <CardNoticia></CardNoticia>
+    <CardNoticias></CardNoticias>
   );
 };

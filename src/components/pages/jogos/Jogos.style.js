@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NoticiasArea = styled.div`
+export const JogosArea = styled.div`
 display: flex;
 background: lightblue;
 border: 2px solid red;
@@ -10,7 +10,7 @@ margin: 0;
 padding: 3px;
 `;
 
-export const CampoBuscaNoticiasArea = styled.div`
+export const CampoBuscaJogosArea = styled.div`
 background: lightgreen;
 border: 2px solid white;
 width: 25%;
@@ -19,7 +19,7 @@ margin: 0;
 padding: 3px;
 `;
 
-export const MostruarioNoticiasArea = styled.div`
+export const MostruarioJogosArea = styled.div`
 background: pink;
 border: 2px solid black;
 width: 75%;

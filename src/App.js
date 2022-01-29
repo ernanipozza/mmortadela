@@ -6,7 +6,7 @@ import { Footer } from "./components/footer";
 import { Route, Routes } from "react-router-dom";
 import { Jogos } from "./components/pages/jogos";
 import { Noticias } from "./components/pages/noticias";
-import { Game } from "./components/pages/game";
+import { Jogo } from "./components/pages/jogo";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="" element={<Noticias/>}/>
         <Route path="jogos">
           <Route index element={<Jogos/>}/>
-          <Route path=":id" element={<Game/>}/>
+          <Route path=":id" element={<Jogo/>}/>
         </Route>
       </Routes>
       <Footer/>
