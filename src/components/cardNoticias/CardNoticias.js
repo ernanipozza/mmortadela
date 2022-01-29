@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
+import { CardNoticia } from "./CardNoticias.style";
 
 export const CardNoticias = () => {
-  return <div>
-      <p>CARDNOTICIAS</p>
-      </div>;
+  return (
+    <CardNoticia></CardNoticia>
+  );
 };

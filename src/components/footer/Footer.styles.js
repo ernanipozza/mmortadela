@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderNoticias = styled.header`
+export const FooterNoticias = styled.footer`
 background: yellow;
 border: 2px solid blue;
 width: 100%-2px;
@@ -9,20 +9,20 @@ margin: 0;
 padding: 3px;
 `;
 
-export const BannerHeader = styled.div`
+export const AssinaturaNoticias = styled.div`
 position: absolute;
 left: 15px;
 width: 500px;
 background-color: green;
 `;
 
-export const BotoesHeader = styled.div`
+export const DivBotoesFooter = styled.div`
 position: absolute;
 right: 15px;
 width: 500px;
 `;
 
-export const BotaoHeader = styled.button`
+export const BotoesFooter = styled.button`
 background: #0099FF;
 border: 2px solid #0099FF;
 border-radius: 3px;
