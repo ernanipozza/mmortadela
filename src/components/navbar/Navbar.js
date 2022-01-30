@@ -1,17 +1,17 @@
 import React from 'react';
 import imgJoguinho from "../../assets/joguinhos.jpg"
-import { HeaderNoticias, BannerHeader, BotoesHeader, BotaoHeader } from "./Navbar.styles"
+import { Header, BannerHeader, BotoesHeader, BotaoHeader } from "./Navbar.styles"
 
 export const Navbar = () => {
     return (
-        <HeaderNoticias>
+        <Header>
             <BannerHeader>
                 <img src={imgJoguinho}></img>
             </BannerHeader>
             <BotoesHeader>
-                <BotaoHeader>Notícias</BotaoHeader>
-                <BotaoHeader>Jogos</BotaoHeader>
+                <BotaoHeader to="/">Notícias</BotaoHeader>
+                <BotaoHeader to="/jogos">Jogos</BotaoHeader>
             </BotoesHeader>
-        </HeaderNoticias>
+        </Header>
     )
 };

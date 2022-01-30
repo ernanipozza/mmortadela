@@ -2,6 +2,7 @@
 
 
 import { Router } from "./Routes";
+import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
 import { Route, Routes } from "react-router-dom";
 import { Jogos } from "./components/pages/jogos";
