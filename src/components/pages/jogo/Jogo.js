@@ -3,14 +3,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Navbar } from  "../../navbar"
-import { JogoArea, ResumoJogoArea, MostruarioJogoArea, TituloJogo, InfoGeraisJogo, ImagemDescricaoJogo, ImagensJogo, ImagemExibida, ListaImagens, ImagensCarrossel, DescricaoJogo, FormularioComentarioJogoArea, Formulario, DivNomeEmail, InputNome, InputEmail, DivComentarioBotao, InputComentario, BotaoComentario, ComentariosArea, ComentarioSalvo, ComentarioSalvoTexto, ComentarioSalvoVotos } from "./Jogo.style";
+import ImgDownvote from "../../../assets/ImgDownvote.png";
+import ImgUpvote from "../../../assets/ImgUpvote.png";
+import { JogoArea, ResumoJogoArea, MostruarioJogoArea, TituloJogo, InfoGeraisJogo, ImagemDescricaoJogo, ImagensJogo, ImagemExibida, ListaImagens, ImagensCarrossel, DescricaoJogo, FormularioComentarioJogoArea, Formulario, FormularioComentarioTitulo, DivNomeEmail, InputNome, InputEmail, DivComentarioBotao, InputComentario, BotaoComentario, ComentariosArea, ComentarioSalvo, ComentarioSalvoTexto, ComentarioSalvoVotos, AreaVotos, Upvote, Downvote, AreaContadorVotos } from "./Jogo.style";
+import { Formulario11 } from "./Formulario"
+
 
 export const Jogo = () => {
   const { id } = useParams();
   return (
     <>
       <Navbar/>
-      <JogoArea>
+      <JogoArea> 
         <ResumoJogoArea>
           <TituloJogo> ID DO JOGO: {id} </TituloJogo>
           <InfoGeraisJogo>Gênero: <br/>
@@ -22,7 +26,7 @@ export const Jogo = () => {
         <MostruarioJogoArea>
           <ImagemDescricaoJogo>
             <ImagensJogo>
-              <ImagemExibida>IMAGEM PRINCIPAL</ImagemExibida>
+              <ImagemExibida>IMAGEM EXIBIDA</ImagemExibida>
               <ListaImagens>
                 <ImagensCarrossel>SLIDE 1</ImagensCarrossel>
                 <ImagensCarrossel>SLIDE 2</ImagensCarrossel>
@@ -32,26 +36,45 @@ export const Jogo = () => {
             </ImagensJogo>
             <DescricaoJogo>DESCRIÇÃO</DescricaoJogo>
           </ImagemDescricaoJogo>
-          <FormularioComentarioJogoArea>
-            <Formulario>
-              <DivNomeEmail>
-                <InputNome></InputNome>
-                <InputEmail></InputEmail>
-              </DivNomeEmail>
-              <DivComentarioBotao>
-                <InputComentario></InputComentario>
-                <BotaoComentario>ENVIAR COMENTÁRIO</BotaoComentario>
-              </DivComentarioBotao>
-            </Formulario>
-            <ComentariosArea>COMENTÁRIOS
-              <ComentarioSalvo>
-                <ComentarioSalvoTexto>COMENTÁRIO SALVO</ComentarioSalvoTexto>
-                <ComentarioSalvoVotos>VOTOS</ComentarioSalvoVotos>
-              </ComentarioSalvo>
-            </ComentariosArea>
-          </FormularioComentarioJogoArea>
-        </MostruarioJogoArea>
+        </MostruarioJogoArea> 
+        <FormularioComentarioJogoArea>
+          <Formulario>
+            <FormularioComentarioTitulo> DEIXE AQUI SEU COMENTÁRIO (máximo 100 caracteres)</FormularioComentarioTitulo>
+            <DivNomeEmail>
+              <InputNome placeholder="Informe seu nome"></InputNome>
+              <InputEmail placeholder="email@mail.com"></InputEmail>
+            </DivNomeEmail>
+            <DivComentarioBotao>
+              <InputComentario placeholder="Insira seu comentário"></InputComentario>
+              <BotaoComentario>ENVIAR COMENTÁRIO</BotaoComentario>
+            </DivComentarioBotao>
+          </Formulario>
+          <ComentariosArea>COMENTÁRIOS
+            <ComentarioSalvo>
+              <ComentarioSalvoTexto>100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 0000000000</ComentarioSalvoTexto>
+              <ComentarioSalvoVotos>
+                <AreaVotos>
+                  <Upvote><img src={ImgUpvote} width="35px" height="35px"></img></Upvote>
+                  <Downvote><img src={ImgDownvote} width="35px" height="35px"></img></Downvote>
+                </AreaVotos>
+                <AreaContadorVotos> 50 </AreaContadorVotos>
+              </ComentarioSalvoVotos>
+            </ComentarioSalvo>
+            <ComentarioSalvo>
+              <ComentarioSalvoTexto>MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</ComentarioSalvoTexto>
+              <ComentarioSalvoVotos>
+                <AreaVotos>
+                  <Upvote><img src={ImgUpvote} width="35px" height="35px"></img></Upvote>
+                  <Downvote><img src={ImgDownvote} width="35px" height="35px"></img></Downvote>
+                </AreaVotos>
+                <AreaContadorVotos> 50 </AreaContadorVotos>
+              </ComentarioSalvoVotos>
+            </ComentarioSalvo>
+          </ComentariosArea>
+        </FormularioComentarioJogoArea>
       </JogoArea>
     </>
   );
 };
+
+

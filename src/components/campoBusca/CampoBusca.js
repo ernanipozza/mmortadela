@@ -1,18 +1,24 @@
 //utilizar valores do contexto para popular busca
 
 import React from "react";
-import { InputBuscaArea, InputBusca, BotoesArea, BotaoBusca, BotaoLimpar } from "./CampoBusca.styles";
+import { AreaCampoBusca, Titulo, InputBuscaArea, InputBusca, BotoesArea, BotaoBusca, BotaoLimpar, AreaBotaoMostrarTudo, BotaoMostrarTudo } from "./CampoBusca.styles";
 
-export const CampoBusca = () => {
+export const CampoBusca = ({valorBusca = '', setValorBusca, limpaBusca, buscaJogos}) => {
   return (
     <>
-    <InputBuscaArea>
-      <InputBusca></InputBusca>
-    </InputBuscaArea>
-    <BotoesArea>
-      <BotaoBusca>Pesquisar</BotaoBusca>
-      <BotaoLimpar>Limpar</BotaoLimpar>
-    </BotoesArea>
+    <AreaCampoBusca>
+      <Titulo>Busque pelo seu jogo predileto!</Titulo>
+      <InputBuscaArea>
+        <InputBusca value={valorBusca} onChange={event => setValorBusca(event.target.value)}/>
+      </InputBuscaArea>
+      <BotoesArea>
+        <BotaoBusca onClick={buscaJogos}>Pesquisar</BotaoBusca>
+        <BotaoLimpar onClick={limpaBusca}>Limpar</BotaoLimpar>
+      </BotoesArea>
+      <AreaBotaoMostrarTudo>
+        <BotaoMostrarTudo>Exibir todos os jogos</BotaoMostrarTudo>
+      </AreaBotaoMostrarTudo>
+    </AreaCampoBusca>
     </>
   );
 };

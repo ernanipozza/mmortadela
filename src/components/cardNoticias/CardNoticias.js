@@ -9,3 +9,6 @@ export const CardNoticias = () => {
     </CardNoticia>
   );
 };
+
+
+// tamanho imagem: 205 x 155

@@ -1,28 +1,26 @@
 import styled from 'styled-components';
 
 export const CardNoticia = styled.div`
-background: white;
-border: 2px solid blue;
-width: 150px;
-height: 150px;
+background: #abf62d;
+border: 2px solid #abf62d;
+border-radius: 4px;
+width: 205px;
+height: 205px;
 margin: 0;
 padding: 3px;
 `;
 
 export const CardNoticiaImagem = styled.div`
-background: lightblue;
-border: 2px solid red;
-width: 140px;
-height: 85px;
+border: 2px;
+width: 100%-2px;
+height: 74%;
 margin: 0;
-padding: 3px;
+padding: 2px;
 `;
 
 export const CardNoticiaTitulo = styled.div`
-background: red;
-border: 2px solid green;
-width: 140px;
-height: 45px;
-margin: 0;
+border: 2px;
+width: 100%-2px;
+height: 21%;
 padding: 3px;
 `;
