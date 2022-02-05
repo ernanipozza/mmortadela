@@ -22,9 +22,12 @@ padding: 3px;
 
 export const TituloJogo = styled.div`
 border: 2px;
+font-size: 35px;
+font-weight: bold;
+text-align: center;
 height: 35%;
 margin: 0;
-padding: 3px;
+padding: 10px;
 `;
 
 export const InfoGeraisJogo = styled.div`

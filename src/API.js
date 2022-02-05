@@ -16,8 +16,6 @@ export const getJogos = async() => {
     }
 }
 
-
-
 export const getNoticias = async() => {
   try {
     const request = await fetch(`${baseUrl}/latestnews`, {
@@ -34,9 +32,9 @@ export const getNoticias = async() => {
   }
 }
 
-export const getJogo = async() => {
+export const getJogo = async(id) => {
   try {
-    const request = await fetch(`${baseUrl}/game`, {
+    const request = await fetch(`${baseUrl}/game?id=${id}`, {
       "method": "GET",
       "headers": {
           "x-rapidapi-host": "mmo-games.p.rapidapi.com",

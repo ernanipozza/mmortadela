@@ -19,6 +19,8 @@ padding: 3px;
 `;
 
 export const MostruarioNoticiasArea = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
 background: #d6a3fb;
 border: 2px;
 border-left: 2px solid #abf62d;

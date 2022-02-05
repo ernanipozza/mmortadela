@@ -5,15 +5,16 @@ background: #abf62d;
 border: 2px solid #abf62d;
 border-radius: 4px;
 width: 205px;
-height: 205px;
-margin: 0;
+height: 290px;
+margin: auto;
+margin-bottom: 20px;
 padding: 3px;
 `;
 
 export const CardNoticiaImagem = styled.div`
 border: 2px;
 width: 100%-2px;
-height: 74%;
+height: 155px;
 margin: 0;
 padding: 2px;
 `;
@@ -21,6 +22,6 @@ padding: 2px;
 export const CardNoticiaTitulo = styled.div`
 border: 2px;
 width: 100%-2px;
-height: 21%;
-padding: 3px;
+text-align: center;
+text-decoration: none;
 `;

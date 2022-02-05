@@ -7,17 +7,17 @@ import { CampoBusca } from "../../campoBusca";
 import { getJogos } from "../../../API";
 
 export const Jogos = () => {
+
   const [buscaJogos, setBuscaJogos] = useState('');
   const handleBuscaJogos = value => {setBuscaJogos(value)};
   const limpaBuscaJogos = () => setBuscaJogos('');
   const [aguardaResultado, setAguardarResultado] = useState(false);
   const [resultadoDaBuscaJogos, setResultadoDaBuscaJogos] = useState([]);
-
+  
   useEffect(()=> {
     getJogos().then(response => setResultadoDaBuscaJogos(response)).catch(error => console.log(error)).finally(() => setAguardarResultado(false)
   )}, [])
-
-  
+ 
   return (
     <>
     <Navbar/>
@@ -27,7 +27,7 @@ export const Jogos = () => {
       </CampoBuscaJogosArea>
       <MostruarioJogosArea>
         <MostruarioJogos jogos={resultadoDaBuscaJogos}/>
-        </MostruarioJogosArea>
+      </MostruarioJogosArea>
     </JogosArea>
     </>
   );
