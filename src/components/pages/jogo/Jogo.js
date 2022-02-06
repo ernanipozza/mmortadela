@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Navbar } from  "../../navbar"
-import ImgDownvote from "../../../assets/ImgDownvote.png";
-import ImgUpvote from "../../../assets/ImgUpvote.png";
-import { JogoArea, ResumoJogoArea, MostruarioJogoArea, TituloJogo, InfoGeraisJogo, ImagemDescricaoJogo, ImagensJogo, ImagemExibida, ListaImagens, ImagensCarrossel, DescricaoJogo, FormularioComentarioJogoArea, Formulario, FormularioComentarioTitulo, DivNomeEmail, InputNome, InputEmail, DivComentarioBotao, InputComentario, BotaoComentario, ComentariosArea, ComentarioSalvo, ComentarioSalvoTexto, ComentarioSalvoVotos, AreaVotos, Upvote, Downvote, AreaContadorVotos } from "./Jogo.style";
-import { Formulario11 } from "./Formulario"
+import { JogoArea, ResumoJogoArea, MostruarioJogoArea, TituloJogo, InfoGeraisJogo, ImagemDescricaoJogo, ImagensJogo, ImagemExibida, ListaImagens, ImagensCarrossel, DescricaoJogo, FormularioComentarioJogoArea } from "./Jogo.style";
+import { Formulario } from "./Formulario"
 
 import { getJogo } from "../../../API";
 
@@ -14,7 +12,7 @@ export const Jogo = ({ehTemaClaro, setEhTemaClaro}) => {
   const [carregando, setCarregando]= useState(true);
   const numeroImagens = [0, 1, 2];
   const imagemAtual = useRef(null);
-        
+          
   useEffect(()=> {
     getJogo(id).then((response => {
       const jogoFiltro = response
@@ -42,12 +40,13 @@ export const Jogo = ({ehTemaClaro, setEhTemaClaro}) => {
           <InfoGeraisJogo>Gênero: <span>{detalhes.genre}</span><br/>
                           Plataforma: <span>{detalhes.platform}</span><br/>
                           Data de Lançamento: <span>{detalhes.release_date}</span><br/>
-                          Requisitos Mínimos: <br/>
-                          <p>-{detalhes.minimum_system_requirements.os}</p>
-                          <p>-{detalhes.minimum_system_requirements.processor}</p>
-                          <p>-{detalhes.minimum_system_requirements.memory}</p>
-                          <p>-{detalhes.minimum_system_requirements.graphics}</p>
-                          <p>-{detalhes.minimum_system_requirements.storage}</p>
+                          <p>Requisitos Mínimos: <br/>
+                          <span>-Sistema Operacional: {detalhes.minimum_system_requirements.os}.</span><br/>
+                          <span>-Processador: {detalhes.minimum_system_requirements.processor}.</span><br/>
+                          <span>-RAM: {detalhes.minimum_system_requirements.memory}.</span><br/>
+                          <span>-Placa de vídeo: {detalhes.minimum_system_requirements.graphics}.</span><br/>
+                          <span>-Armazenamento: {detalhes.minimum_system_requirements.storage}.</span><br/>
+                          </p>
           </InfoGeraisJogo>
         </ResumoJogoArea>
         <MostruarioJogoArea>
@@ -64,49 +63,7 @@ export const Jogo = ({ehTemaClaro, setEhTemaClaro}) => {
           </ImagemDescricaoJogo>
         </MostruarioJogoArea> 
         <FormularioComentarioJogoArea>
-          <Formulario>
-            <FormularioComentarioTitulo> DEIXE AQUI SEU COMENTÁRIO (máximo 100 caracteres)</FormularioComentarioTitulo>
-            <DivNomeEmail>
-              <InputNome placeholder="Informe seu nome"></InputNome>
-              <InputEmail placeholder="email@mail.com"></InputEmail>
-            </DivNomeEmail>
-            <DivComentarioBotao>
-              <InputComentario placeholder="Insira seu comentário"></InputComentario>
-              <BotaoComentario>ENVIAR COMENTÁRIO</BotaoComentario>
-            </DivComentarioBotao>
-          </Formulario>
-          <ComentariosArea>COMENTÁRIOS
-            <ComentarioSalvo>
-              <ComentarioSalvoTexto>100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 0000000000</ComentarioSalvoTexto>
-              <ComentarioSalvoVotos>
-                <AreaVotos>
-                  <Upvote><img src={ImgUpvote} width="35px" height="35px"></img></Upvote>
-                  <Downvote><img src={ImgDownvote} width="35px" height="35px"></img></Downvote>
-                </AreaVotos>
-                <AreaContadorVotos> 50 </AreaContadorVotos>
-              </ComentarioSalvoVotos>
-            </ComentarioSalvo>
-            <ComentarioSalvo>
-              <ComentarioSalvoTexto>100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 0000000000</ComentarioSalvoTexto>
-              <ComentarioSalvoVotos>
-                <AreaVotos>
-                  <Upvote><img src={ImgUpvote} width="35px" height="35px"></img></Upvote>
-                  <Downvote><img src={ImgDownvote} width="35px" height="35px"></img></Downvote>
-                </AreaVotos>
-                <AreaContadorVotos> 50 </AreaContadorVotos>
-              </ComentarioSalvoVotos>
-            </ComentarioSalvo>
-            <ComentarioSalvo>
-              <ComentarioSalvoTexto>MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</ComentarioSalvoTexto>
-              <ComentarioSalvoVotos>
-                <AreaVotos>
-                  <Upvote><img src={ImgUpvote} width="35px" height="35px"></img></Upvote>
-                  <Downvote><img src={ImgDownvote} width="35px" height="35px"></img></Downvote>
-                </AreaVotos>
-                <AreaContadorVotos> 50 </AreaContadorVotos>
-              </ComentarioSalvoVotos>
-            </ComentarioSalvo>
-          </ComentariosArea>
+          <Formulario/>
         </FormularioComentarioJogoArea>
       </JogoArea>
     </>

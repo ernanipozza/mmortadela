@@ -34,7 +34,7 @@ text-align: center;
 
 export const BotaoTema = styled.button`
 background: ${(props) => props.theme.roxo};
-border: 2px solid ${(props) => props.theme.verde};
+border: 2px solid ${(props) => props.theme.borda};
 color: ${(props) => props.theme.letra};
 border-radius: 3px;
 width: 60px;

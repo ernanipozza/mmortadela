@@ -21,11 +21,13 @@ padding: 3px;
 `;
 
 export const TituloJogo = styled.div`
-border: 2px;
+border: 2px solid ${(props) => props.theme.borda};
+border-radius: 4px;
 color: ${(props) => props.theme.letra};
 font-size: 35px;
 font-weight: bold;
 text-align: center;
+line-height: 180px;
 height: 35%;
 margin: 0;
 padding: 10px;
@@ -98,70 +100,33 @@ color: ${(props) => props.theme.letra};
 
 export const FormularioComentarioJogoArea = styled.div`
 border: 2px;
-border-left: 2px solid ${(props) => props.theme.verde};;
+border-left: 2px solid ${(props) => props.theme.verde};
 width: 30%;
 margin: 0;
 padding: 3px;
 `;
 
-export const Formulario = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
+export const ComentariosAreaTitulo = styled.h2`
 border: 2px;
-width: 100%-2px;
-margin: 0;
-padding: 3px;
-height: 210px;
-`;
-
-export const FormularioComentarioTitulo = styled.div`
-border: 2px;
-width: 100%-2px;
-height: 40px;
-margin: 0;
-padding: 3px;
+color: ${(props) => props.theme.letra}; 
 text-align: center;
-`;
-
-export const DivNomeEmail = styled.div`
-display: flex;
-width: 100%;
-justify-content: space-around;
+width: 100%-2px;
+margin: 0;
 padding: 3px;
 `;
 
-export const InputNome = styled.input`
-margin-right: 5px;
-border: 1px solid black;
-width: 40%;
-`;
-
-export const InputEmail = styled.input`
-margin-right: 5px;
-border: 1px solid black;
-width: 40%;
-`;
-
-export const DivComentarioBotao = styled.div`
+export const ComentariosAreaSubtitulo = styled.h5`
+border: 2px;
+color: ${(props) => props.theme.letra}; 
+text-align: center;
+width: 100%-2px;
+margin: 0;
 padding: 3px;
 `;
 
-export const InputComentario = styled.textarea`
-width: 95%;
-height: 100px;
-padding: 2px;
-margin: 3px 10px 3px 10px;
-resize: none;
-`;
-
-export const BotaoComentario = styled.button`
-margin: 3px 10px 3px 10px;
-padding: 2px;
-width: 96.5%;
-`;
 
 export const ComentariosArea = styled.div`
+color: ${(props) => props.theme.letra}; 
 display: flex;
 flex-direction: column;
 border: 2px;
@@ -171,6 +136,16 @@ margin: 0;
 overflow: auto;
 padding: 3px;
 text-align: center;
+`;
+
+export const NomeSalvo = styled.div`
+display: flex;
+border: 2px;
+width: 100%-2px;
+height: 10px;
+margin: 0;
+padding: 3px;
+word-break: break-word;
 `;
 
 export const ComentarioSalvo = styled.div`
