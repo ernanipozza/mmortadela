@@ -6,6 +6,6 @@ export const MostruarioJogos = ({jogos}) => {
     return <p>Sem Jogos A Serem Exibidos No Momento.</p>
   }
   
-  return jogos.map((jogo) => (<CardJogos imagemJogo={jogo.thumbnail} tituloJogo={jogo.title} id={jogo.id}/>)) 
+  return jogos.map((jogo) => (<CardJogos imagemJogo={jogo.thumbnail} tituloJogo={jogo.title} id={jogo.id} key={jogo.id}/>)) 
   ;
 };

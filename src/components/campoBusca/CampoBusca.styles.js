@@ -51,14 +51,3 @@ width:25%;
 export const BotaoLimpar = styled.button`
 width:25%;
 `;
-
-export const AreaBotaoMostrarTudo = styled.div`
-display: flex;
-justify-content: center;
-height: 200px;
-`
-
-export const BotaoMostrarTudo = styled.button`
-width:75%;
-height: 50px;
-`;

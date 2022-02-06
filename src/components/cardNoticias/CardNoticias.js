@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { CardNoticia, CardNoticiaImagem, CardNoticiaTitulo } from "./CardNoticias.style";
 
 export const CardNoticias = ({imagemNoticia='', tituloNoticia='', linkNoticia=''}) => {

@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { TemaClaro, TemaEscuro } from "./Tema";
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { Router } from "./Routes";
 import { Footer } from "./components/footer";
 import { Route, Routes } from "react-router-dom";

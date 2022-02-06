@@ -10,6 +10,8 @@ height: 100px;
 `;
 
 export const BannerHeader = styled.div`
+margin: auto;
+margin-left: 60px;
 width: 60%;
 background-color: ${(props) => props.theme.verde};
 `;

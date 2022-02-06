@@ -1,7 +1,5 @@
-//utilizar valores do contexto para popular busca
-
 import React from "react";
-import { AreaCampoBusca, Titulo, InputBuscaArea, InputBusca, BotoesArea, BotaoBusca, BotaoLimpar, AreaBotaoMostrarTudo, BotaoMostrarTudo } from "./CampoBusca.styles";
+import { AreaCampoBusca, Titulo, InputBuscaArea, InputBusca, BotoesArea, BotaoBusca, BotaoLimpar} from "./CampoBusca.styles";
 
 export const CampoBusca = ({valorBusca = '', setValorBusca, limpaBusca, buscaJogos}) => {
   return (
@@ -12,12 +10,9 @@ export const CampoBusca = ({valorBusca = '', setValorBusca, limpaBusca, buscaJog
         <InputBusca value={valorBusca} onChange={event => setValorBusca(event.target.value)}/>
       </InputBuscaArea>
       <BotoesArea>
-        <BotaoBusca onClick={buscaJogos}>Pesquisar</BotaoBusca>
-        <BotaoLimpar onClick={limpaBusca}>Limpar</BotaoLimpar>
+        <BotaoBusca onClick={() => buscaJogos(valorBusca)}>Pesquisar</BotaoBusca>
+        <BotaoLimpar onClick={() => limpaBusca()}>Limpar</BotaoLimpar>
       </BotoesArea>
-      <AreaBotaoMostrarTudo>
-        <BotaoMostrarTudo>Exibir todos os jogos</BotaoMostrarTudo>
-      </AreaBotaoMostrarTudo>
     </AreaCampoBusca>
     </>
   );
