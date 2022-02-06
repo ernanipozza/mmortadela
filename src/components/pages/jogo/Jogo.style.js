@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const JogoArea = styled.main`
 display: flex;
-background: #d6a3fb;
+background: ${(props) => props.theme.roxo};
 border: 2px;
 width: 100%-2px;
 margin: 0;
@@ -14,7 +14,7 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 border: 2px;
-border-right: 2px solid #abf62d;
+border-right: 2px solid ${(props) => props.theme.verde};
 width: 25%;
 margin: 0;
 padding: 3px;
@@ -22,6 +22,7 @@ padding: 3px;
 
 export const TituloJogo = styled.div`
 border: 2px;
+color: ${(props) => props.theme.letra};
 font-size: 35px;
 font-weight: bold;
 text-align: center;
@@ -31,6 +32,7 @@ padding: 10px;
 `;
 
 export const InfoGeraisJogo = styled.div`
+color: ${(props) => props.theme.letra};
 border: 2px;
 flex-grow: 1;
 margin: 0;
@@ -40,8 +42,8 @@ padding: 3px;
 export const MostruarioJogoArea = styled.div`
 display: flex;
 border: 2px;
-border-left: 2px solid #abf62d;
-border-right: 2px solid #abf62d;
+border-left: 2px solid ${(props) => props.theme.verde};
+border-right: 2px solid ${(props) => props.theme.verde};
 width: 45%;
 margin: 0;
 padding: 3px;
@@ -59,7 +61,7 @@ display: flex;
 `;
 
 export const ImagemExibida = styled.div`
-border: 2px solid #abf62d;
+border: 2px solid ${(props) => props.theme.verde};
 border-radius: 4px;
 height: 450px;
 width: 650px;
@@ -70,7 +72,7 @@ padding: 3px;
 export const ListaImagens = styled.div`
 display: flex;
 flex-direction: column;
-border: 2px solid #abf62d;
+border: 2px solid ${(props) => props.theme.verde};
 border-radius: 4px;
 flex-grow: 1;
 height: 450px;
@@ -79,20 +81,24 @@ padding: 3px;
 `;
 
 export const ImagensCarrossel = styled.div`
-border: 1px solid #abf62d;
+display: flex;
+justify-content: center;
+border: 1px solid ${(props) => props.theme.verde};;
 border-radius: 2px;
 flex-grow: 1;
-margin: 0;
+margin: 1px;
 `;
 
 export const DescricaoJogo = styled.div`
+padding: 10px;
 border: 2px;
 flex-grow: 1;
+color: ${(props) => props.theme.letra};
 `;
 
 export const FormularioComentarioJogoArea = styled.div`
 border: 2px;
-border-left: 2px solid #abf62d;
+border-left: 2px solid ${(props) => props.theme.verde};;
 width: 30%;
 margin: 0;
 padding: 3px;

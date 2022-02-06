@@ -6,7 +6,7 @@ import { CampoBusca } from "../../campoBusca";
 
 import { getNoticias } from "../../../API";
 
-export const Noticias = () => {
+export const Noticias = ({ehTemaClaro, setEhTemaClaro}) => {
   const [buscaNoticias, setBuscaNoticias] = useState('');
   const handleBuscaNoticias = value => {setBuscaNoticias(value)};
   const limpaBuscaNoticias = () => setBuscaNoticias('');
@@ -19,7 +19,7 @@ export const Noticias = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar ehTemaClaro={ehTemaClaro} setEhTemaClaro={setEhTemaClaro}/>
       <NoticiasArea>
         <CampoBuscaNoticiasArea>
           <CampoBusca valorBusca={buscaNoticias} setValorBusca={handleBuscaNoticias} limpaBusca={limpaBuscaNoticias}/>

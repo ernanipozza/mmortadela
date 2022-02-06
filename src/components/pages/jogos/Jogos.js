@@ -6,7 +6,7 @@ import { CampoBusca } from "../../campoBusca";
 
 import { getJogos } from "../../../API";
 
-export const Jogos = () => {
+export const Jogos = ({ehTemaClaro, setEhTemaClaro}) => {
 
   const [buscaJogos, setBuscaJogos] = useState('');
   const handleBuscaJogos = value => {setBuscaJogos(value)};
@@ -20,7 +20,7 @@ export const Jogos = () => {
  
   return (
     <>
-    <Navbar/>
+    <Navbar ehTemaClaro={ehTemaClaro} setEhTemaClaro={setEhTemaClaro}/>
     <JogosArea>
       <CampoBuscaJogosArea>
         <CampoBusca valorBusca={buscaJogos} setValorBusca={handleBuscaJogos} limpaBusca={limpaBuscaJogos} />
@@ -32,3 +32,15 @@ export const Jogos = () => {
     </>
   );
 };
+
+
+
+
+function efetuaPesquisa(receitas, ingredientes) {
+  return receitas.filter(receita => {
+    return ingredientes.every(ingrediente=>{
+      return Object.values(receita.ingredientesBase)
+        .some(ingredienteBase=>ingredienteBase.toLowerCase()===ingrediente.toLowerCase())
+    })
+  })
+}

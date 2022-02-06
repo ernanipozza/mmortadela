@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const CardNoticia = styled.div`
-background: #abf62d;
-border: 2px solid #abf62d;
+background: ${(props) => props.theme.verde};
+border: 2px solid ${(props) => props.theme.verde};
 border-radius: 4px;
 width: 205px;
 height: 290px;
@@ -20,6 +20,7 @@ padding: 2px;
 `;
 
 export const CardNoticiaTitulo = styled.div`
+color: ${(props) => props.theme.letra};
 border: 2px;
 width: 100%-2px;
 text-align: center;

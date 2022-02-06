@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const AreaCampoBusca = styled.div`
-background: #d6a3fb;
+background: ${(props) => props.theme.roxo};
 height: 100%;
 `;
 
 export const Titulo = styled.div`
-background: #d6a3fb;
+background: ${(props) => props.theme.roxo};
+color: ${(props) => props.theme.letra};
 border: 2px;
 text-align: center;
 line-height: 50px;
@@ -17,7 +18,7 @@ padding: 3px;
 `;
 
 export const InputBuscaArea = styled.div`
-background: #d6a3fb;
+background: ${(props) => props.theme.roxo};
 border: 2px;
 width: 100%-2px;
 height: 50px;
@@ -35,7 +36,7 @@ text-align: center;
 export const BotoesArea = styled.div`
 display: flex;
 justify-content: space-around;
-background: #d6a3fb;
+background: ${(props) => props.theme.roxo};
 border: 2px;
 width: 100%-2px;
 height: 50px;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Navbar } from  "../../navbar"
 import ImgDownvote from "../../../assets/ImgDownvote.png";
@@ -8,19 +8,26 @@ import { Formulario11 } from "./Formulario"
 
 import { getJogo } from "../../../API";
 
-export const Jogo = () => {
+export const Jogo = ({ehTemaClaro, setEhTemaClaro}) => {
   const { id } = useParams();
   const [detalhes, setDetalhes] = useState({});
   const [carregando, setCarregando]= useState(true);
-  
+  const numeroImagens = [0, 1, 2];
+  const imagemAtual = useRef(null);
+        
   useEffect(()=> {
     getJogo(id).then((response => {
       const jogoFiltro = response
       setDetalhes(jogoFiltro)
       setCarregando(false)
     }))
-
   },[])
+
+  const trocaImagemPrincipal = (novoSrc) => {
+    console.log(novoSrc)
+    console.log(imagemAtual.current)
+    imagemAtual.current.src = novoSrc;
+  }
 
   if(carregando){
     return <p>Carregando</p>
@@ -28,7 +35,7 @@ export const Jogo = () => {
 
   return (
     <>
-      <Navbar/>
+      <Navbar ehTemaClaro={ehTemaClaro} setEhTemaClaro={setEhTemaClaro}/>
       <JogoArea> 
         <ResumoJogoArea>
           <TituloJogo> <p>{detalhes.title}</p></TituloJogo>
@@ -46,12 +53,11 @@ export const Jogo = () => {
         <MostruarioJogoArea>
           <ImagemDescricaoJogo>
             <ImagensJogo>
-              <ImagemExibida><img src={detalhes.screenshots[0].image} alt={detalhes.title} width="650px" height="450px"/></ImagemExibida>
+              <ImagemExibida><img src={detalhes.screenshots[0].image} alt={detalhes.title} width="650px" height="450px" ref={imagemAtual}/></ImagemExibida>
               <ListaImagens>
-                <ImagensCarrossel><img src={detalhes.screenshots[0].image} alt={detalhes.title} width="166px" height="112px"/></ImagensCarrossel>
-                <ImagensCarrossel><img src={detalhes.screenshots[1].image} alt={detalhes.title} width="166px" height="112px"/></ImagensCarrossel>
-                <ImagensCarrossel><img src={detalhes.screenshots[2].image} alt={detalhes.title} width="166px" height="112px"/></ImagensCarrossel>
-                {/* <ImagensCarrossel><img src={detalhes.screenshots[3].image} alt={detalhes.title} width="166px" height="112px"/></ImagensCarrossel> */}
+                {numeroImagens.map((numeroImagem) => (
+                  <ImagensCarrossel onClick={({target}) => trocaImagemPrincipal(target.src)}><img src={detalhes.screenshots[numeroImagem].image} alt={detalhes.title} width="170px" height="145px"/></ImagensCarrossel>
+                ))}
               </ListaImagens>
             </ImagensJogo>
             <DescricaoJogo>{detalhes.short_description}</DescricaoJogo>
@@ -70,6 +76,16 @@ export const Jogo = () => {
             </DivComentarioBotao>
           </Formulario>
           <ComentariosArea>COMENTÁRIOS
+            <ComentarioSalvo>
+              <ComentarioSalvoTexto>100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 0000000000</ComentarioSalvoTexto>
+              <ComentarioSalvoVotos>
+                <AreaVotos>
+                  <Upvote><img src={ImgUpvote} width="35px" height="35px"></img></Upvote>
+                  <Downvote><img src={ImgDownvote} width="35px" height="35px"></img></Downvote>
+                </AreaVotos>
+                <AreaContadorVotos> 50 </AreaContadorVotos>
+              </ComentarioSalvoVotos>
+            </ComentarioSalvo>
             <ComentarioSalvo>
               <ComentarioSalvoTexto>100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 100 CARACTERES 0000000000</ComentarioSalvoTexto>
               <ComentarioSalvoVotos>
